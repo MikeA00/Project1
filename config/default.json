@@ -1,0 +1,13 @@
+{
+    "Gabi_": {
+      "dbConfig": {
+        "host": "localhost",
+        "port": 5984,
+        "dbName": "mongodb+srv://Michael:sentuop@cluster0.57yfsuc.mongodb.net/?retryWrites=true&w=majority"
+      },
+      "credit": {
+        "initialLimit": 100,
+        "initialDays": 1
+      }
+    }
+  }

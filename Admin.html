@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/x-icon" href="./2111320.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Gabi Online_</title>
+</head>
+<body class="bg-background text-white">
+    <header id="#start" class=" border-b border-solid border-header">
+        <div class="flex items-center justify-between pl-4">
+            <img class="h-16" src="./Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+        </div>
+    </header>
+    <main class="flex ">
+        <!--Body Left-->
+        <div class="border-r border-header border-solid h-screen relative grid place-items-center" style="flex:0.2">
+            <div class=" absolute top-0 mt-5 space-y-4">
+                <div class="flex space-x-2 rounded-2xl border-header border-2 p-2 h-12  text-white items-center hover:bg-text hover:text-background">
+                    <span class="material-icons">add</span> <p>Add Product</p>
+                </div>
+                <div class="flex space-x-2 rounded-2xl border-header border-2 p-2 h-12 text-white items-center hover:bg-text hover:text-background">
+                    <span class="material-icons">manage_history</span><p>Mange Order</p>
+                </div>
+                <div class="flex space-x-2 rounded-2xl border-header border-2 p-2 h-12 text-white items-center hover:bg-text hover:text-background">
+                    <span class="material-icons">update</span> <p>Update Product</p>
+                </div>
+            </div>
+        </div>
+        <!--Body Left-->
+
+        <!--Body Right-->
+        <div style="flex: 0.8" class="relative place-items-center ">
+            <!--Add Product-->
+            <div class=" mt-20">
+                <form class="hidden space-y-8 bg-text items-center border-2 border-header rounded-3xl w-72 h-96 p-10 m-auto " >
+                    <input type="file" id='pic' accept = 'image/*'class="hidden">
+                    <label for='pic'class ='border-dashed border-2 border-black mx-10 place-items-center grid cursor-pointer '>
+                        <i class="material-icons  flex justify-center w-full text-black">add_photo_alternate</i>
+                        <P class="text-black non-italic font-normal text-cnter">Upload Image</P>
+                    </label>
+                    
+                    <input type="number" placeholder="Price" class="mx-auto block rounded-2xl p-2">
+                    <input type="number"placeholder="Quantity" class="mx-auto block rounded-2xl p-2">
+                    <button class="w-full bg-purple-600 h-11 rounded-3xl">Submit</button>
+                </form>
+            </div>
+            <!--Add Product-->
+            
+            <!--Update Product-->
+            <div class=" mt-20">
+                <form class=" space-y-8 bg-text items-center border-2 border-header rounded-3xl w-72 h-96 p-10 m-auto " >
+                    <input type="file" id='pic' accept = 'image/*'class="hidden">
+                    <label for='pic'class ='border-dashed border-2 border-black m-10 place-items-center grid cursor-pointer '>
+                        <i class="material-icons  flex justify-center w-full text-black">add_photo_alternate</i>
+                        <P class="text-black non-italic font-normal text-cnter">Upload Image</P>
+                    </label>
+                    
+                    <input type="number" placeholder="Price" class="mx-auto block rounded-2xl p-2">
+                    <input type="number"placeholder="Quantity" class="mx-auto block rounded-2xl p-2">
+                    <button class="w-full bg-purple-600 h-11 rounded-3xl" onclick="insertingProduct()">Submit</button>
+                </form>
+            </div>
+            <!--Update Product-->
+            
+        </div>
+        <!--Body Right-->
+    </main>
+
+    <script src="/index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./JS/tailwiind.js "></script> 
+</body>
+</html>
