@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/x-icon" href="2111320.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Gabi Online Shopping-Home Page</title>
+    
+</head>
+<body class="bg-background">
+    <!--Header Start-->
+    <header id="#start" class="relative mx-auto my-0 p-2 ">
+        <div class="flex items-center justify-between mt-0">
+            <div class="pt-2 ">
+                <img class="h-16" src="Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+                
+            </div>
+            <nav class="md:flex hidden space-x-6 mr-20  font-semibold justify-end">
+                <a href="Home" class="text-white w-28 text-center rounded-2xl border-header border-2 order-solid h-8 align-center hover:bg-text hover:text-background">Home</a>
+                <a href="Product" class="text-white w-28 text-center rounded-2xl border-header border-2 borde br-solid h-8 align-center hover:bg-text hover:text-background">Product</a>
+                <a href="Delivery" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">Delivery</a>
+                <a href="About_Us" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">About us</a>
+            </nav>
+
+            <button id="menu-btn" class=" block hamburger md:hidden focus:outline-none">
+                <span class="ham-top"></span>
+                <span class="ham-middle"></span>
+                <span class="ham-bottom"></span>
+            </button>
+        </div>
+        <div class="md:hidden">
+            <div id="menu" class=" bg-hover absolute flex-col  items-center self-end hidden py-8 mt-10 space-y-6 font-semibold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="Home" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">Home</a>
+                <a href="Product" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background ">Product</a>
+                <a href="Delivery" class="text-white w-28 text-center rounded-2xl  border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">Delivery</a>
+                <a href="About_Us" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">About us</a>
+            </div>
+        </div>
+    </header>
+    <!--Header End-->
+    <main class="">
+        <!--Body1 Start-->
+        <div class="flex flex-col md:flex-row  px-20  w-full md:h-4/5">
+            <div class="mx-auto h-4 w-2/4  sm:my-40 my-48">
+                <h1 class="text-5xl text-header ">Gabi Online Shopping</h1>
+                <p class="text-xl my-5 text-text"> Get Your Habesha Kemis Online!!!</p> 
+                <div class=" inline-block w-32 p-2 rounded-lg border-2 border-solid border-header  hover:bg-white"><a href="#home-product" class=" text-center text-text border-solid  hover:bg-white hover:text-purple-600">View Products</a></div>
+            </div>
+            
+            <div class="swiper swiper1 md:w-2/4 w:3/4 md:m-8 mx-8 my-48 ">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper" id="dy">
+                <!-- Slides -->
+                    <script src="JS/Dynamic.js"></script>
+                </div>
+                <div class="swiper-pagination px-10 "></div>
+            </div>
+        </div>
+        <!--Body1 End-->
+        
+        <!--Body2 Start-->
+        <div  id="home-product">
+            <h1 class="text-5xl text-center h-28 my-6 text-header">Products</h1>
+            <div class="swiper swiper2  ">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper cursor-pointer ">
+                    <!-- Slides -->
+                        <div class="swiper-slide place-items-center grid">
+                            <div class='bg-white rounded-2xl'style="width: 280px;">   
+                                <div class=" mb-3" style=" height:300px;   background-image:url('Images/download.jfif'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                                <div class="flex p-2">
+                                    <div>
+                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
+                                        <p class="text-black "> Quantity: <span>7</span></p>
+                                    </div>
+                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide place-items-center grid">
+                            <div class='bg-white rounded-2xl'style="width: 280px;">   
+                                <div class=" mb-3" style=" height:300px;   background-image:url('Images/IMG_20200902_134550_450.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                                <div class="flex p-2">
+                                    <div>
+                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
+                                        <p class="text-black "> Quantity: <span>7</span></p>
+                                    </div>
+                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide place-items-center grid">
+                            <div class='bg-white rounded-2xl'style="width: 280px;">   
+                                <div class=" mb-3" style=" height:300px;   background-image:url('Images/Simple-Crop-Habesha-Kemis1.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                                <div class="flex p-2">
+                                    <div>
+                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
+                                        <p class="text-black "> Quantity: <span>7</span></p>
+                                    </div>
+                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide place-items-center grid">
+                            <div class='bg-white rounded-2xl'style="width: 280px;">   
+                                <div class=" mb-3" style=" height:300px;   background-image:url('Images/Selam-tesfaye-Ethiopian-Celebrities-Best-Dressed-Habesha-Kemis-for-2022.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                                <div class="flex p-2">
+                                    <div>
+                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
+                                        <p class="text-black "> Quantity: <span>7</span></p>
+                                    </div>
+                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <!-- Slides -->
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+
+                <div class="swiper-button-prev text-header"></div>
+                <div class="swiper-button-next text-header"></div>
+                
+            </div>
+        </div>
+            <!--Body2 End-->
+    </main>
+    <!--Footer Start-->
+    <footer class= "my-2 border-t border-header md:block grid place-items-center">
+        <div class="text-text block md:flex md:justify-between md:mx-20">
+            <div class="md:hidden flex grid  place-items-center ">
+                <div class="">
+                    <h1 class="text-center text-header text-4xl block ">Gabi Collections</h1>
+                    <img class="h-16 mx-auto my-2 " src="Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+                </div>  
+            </div>
+            <div class="text-center  space-y-6 my-4">
+                <div class="flex space-x-6">
+                    <span class="material-icons">email</span>
+                    <a class="text-sm cursor-pointer text-header underline">chopyla@gmail.com</a>
+                </div>
+                <div class="flex space-x-6">
+                    <span class="material-icons">phone</span>
+                    <a class="text-sm cursor-pointer text-header underline">+25199116887</a>
+                </div>
+                <div class="flex space-x-6">
+                    <span class="material-icons">place</span>
+                    <a class="text-sm cursor-pointer text-header underline">Addis Ababa, Ethiopia</a>
+                </div>
+            </div>
+            <div class="hidden md:flex grid  place-items-center ">
+                <div class="">
+                    <h1 class="text-center text-header text-4xl block ">Gabi Collections</h1>
+                    <img class="h-16 mx-auto my-2 " src="Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+                </div>  
+            </div>
+            
+            <div class="my-4">
+                <h1 class="text-xl text-center">Contact Us</h1>
+                <div class="md:block flex justify-between ">
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-facebook text-sky-600 md:mr-8 mx-auto"></a>
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-twitter text-sky-600"></a>
+                    <br class="md:block flex ">
+                    <br class="md:block flex ">
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-instagram text-orange-600 md:mr-6 mx-auto"></a>
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-telegram text-sky-600"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="JS/swipe.js"></script>
+    <script src="JS/menu.js"></script>
+    <script src="JS/tailwiind.js"></script>
+</body>
+</html>
