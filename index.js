@@ -1,196 +1,28 @@
-const config = require('config');
-const dbConfig = config.get('Gabi_.dbConfig.dbName');
-
-const { MongoClient } = require("mongodb");
- 
-const client = new MongoClient(dbConfig);
-
-// // The database to use
-const dbName = "gabi";
-
-// // inserting order
-//  async function insertingOrder() {
-//     try {
-//         await client.connect();
-//         console.log("Connected correctly to server");
-
-//         const db = client.db(dbName);
-//          // Using collection order
-//         const col = db.collection("order");
-
-//          let orderdocument = {
-//             //field of order
-//              "name": "Abebe Kebede" ,
-//              "date": new Date(), 
-//              "phoneNumber": "+251962385614",
-//              "Destination": "Addis Ababa, Ethiopia",
-//              "paid": true,
-//              'orderId':"p123",
-//          }
-//          const p = await col.insertOne(orderdocument);
-//         } catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-
-// //reading order data from DB
-// async function readingOrder() {
-//     try {
-//         await client.connect();
-//         console.log("Connected correctly to server");
-
-//         const db = client.db(dbName);
-//          // Using collection order
-//         const col = db.collection("order");
-
-//          const p = await col.findOne({paid:true});
-//          console.log(p);
-//         } catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-
-// //deleting order from db
-// async function deletingOrder() {
-//     try {
-//         await client.connect();
-//         console.log("Connected correctly to server");
-
-//         const db = client.db(dbName);
-//          // Using collection order
-//         const col = db.collection("order");
-
-//          const p = await col.deleteOne({paid:true});
-//         } catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-// //inserting product to DB
-// async function insertingProduct() {
-//     try {
-//         await client.connect();
-//         console.log("Connected to server");
-
-//          const db = client.db(dbName);
-//          // Using collection product
-//          const col = db.collection("product");
-//          let productDocument = {
-//             //field of order
-//              "Image": new Date(),
-//              "price": "2500",
-//              "orderId": "",
-//              "Quantity": 7,
-//              "price":"p123",
-//          }
-//          const p = await col.insertOne(productDocument);
-//         }catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-
-// //updating product in DB
-// async function updatingProduct() {
-//     try {
-//         await client.connect();
-//         console.log("Connected to server");
-
-//          const db = client.db(dbName);
-//          // Using collection product
-//          const col = db.collection("product");
-//          let productDocument = {
-//             //field of order
-//              "Image": new Date(), 
-//              "price": "2500",  
-//              "orderId": "",
-//              "Quantity": 7,
-             
-//          }
-//          const p = await col.updateOne({price:"p123"},{$set:{price:5000}});
-//         }catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-// //reading product data from DB
-// async function readingProduct() {
-//     try {
-//         await client.connect();
-//         console.log("Connected to server");
-
-//          const db = client.db(dbName);
-//          // Using collection product
-//          const col = db.collection("product");
-//          let productDocument = {
-//             //field of order
-//              "Image": new Date(), // May 23, 1912                                                                                                                                 
-//              "price": "2500",  // May 7, 1954                                                                                                                                  
-//              "orderId": "",
-//              "Quantity": 7,
-//              "price":"p123",
-//          }
-//          const p = await col.findOne();
-//          console.log(p);
-//         }catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-// //deleting product data from DB
-// async function deletingProduct() {
-//     try {
-//         await client.connect();
-//         console.log("Connected to server");
-
-//          const db = client.db(dbName);
-//          // Using collection product
-//          const col = db.collection("product");
-
-//          await col.deleteOne({Quantity:7});
-         
-//         }catch (err) {
-//          console.log(err.stack);
-//         }
-//         finally{
-//             await client.close();
-//             console.log("Disconnected correctly to server");
-//         }
-// }
-
-const express =require("express")
+const express =require("express");
+const mongoose  = require('mongoose');
 const app = express()
-app.set("view engine", "ejs")
-app.get('/',(req,res)=>{
-    res.render("Home")
+
+mongoose.connect("mongodb+srv://Michael:sentuop1A@cluster0.57yfsuc.mongodb.net/gabi?retryWrites=true&w=majority",{
+    useNewUrlParser:true,
+    useUnifiedTopology:true, 
 })
-const productRouter= require('./router/Product')
-const deliveryRouter= require('./router/Delivery')
-const about_usRouter= require('./router/about_us')
 
-app.use(express.static('public'));
-app.use('/Product',productRouter)
-app.use('/about_us',about_usRouter)
-app.use('/Delivery',deliveryRouter)
+app.set("view engine", "ejs")
+app.use('/',require('./router/home'))
+app.use('/Product',require('./router/product'))
+app.use('/about_us',require('./router/about_us'))
+app.use('/Delivery',require('./router/delivery'))
+app.use('/admin',require('./router/admin'))
 
+app.use(express.static('public'))
 app.listen(3000)
+
+const product= require('./model/product')
+app.get('/data',(req,res)=>{
+    product.find({}).then((result)=>{
+        res.send(result)
+        console.log(result)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})

@@ -3,7 +3,7 @@
       "dbConfig": {
         "host": "localhost",
         "port": 5984,
-        "dbName": "mongodb+srv://Michael:sentuop@cluster0.57yfsuc.mongodb.net/?retryWrites=true&w=majority"
+        "dbName": "mongodb+srv://Michael:sentuop1A@cluster0.57yfsuc.mongodb.net/?retryWrites=true&w=majority"
       },
       "credit": {
         "initialLimit": 100,
