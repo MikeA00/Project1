@@ -40,34 +40,27 @@
         <div style="flex: 0.8" class="relative place-items-center ">
             <!--Add Product-->
             <div class=" mt-20">
-                <form class="hidden space-y-8 bg-text items-center border-2 border-header rounded-3xl w-72 h-96 p-10 m-auto " >
-                    <input type="file" id='pic' accept = 'image/*'class="hidden">
-                    <label for='pic'class ='border-dashed border-2 border-black mx-10 place-items-center grid cursor-pointer '>
-                        <i class="material-icons  flex justify-center w-full text-black">add_photo_alternate</i>
-                        <P class="text-black non-italic font-normal text-cnter">Upload Image</P>
-                    </label>
-                    
-                    <input type="number" placeholder="Price" class="mx-auto block rounded-2xl p-2">
-                    <input type="number"placeholder="Quantity" class="mx-auto block rounded-2xl p-2">
-                    <button class="w-full bg-purple-600 h-11 rounded-3xl">Submit</button>
-                </form>
+                <h1 class="inline-block">Message : <%= typeof msg==undefined ?'': msg %>  </h1>
+                
+                <div class="flex">
+                    <img src="<%= typeof file != 'undefined' ? file : '' %>"class='h-96 mx-auto'>
+                    <form method="POST" action='/admin'enctype='multipart/form-data' class="space-y-8 bg-text items-center border-2 border-header rounded-3xl w-72 h-96 p-10 m-auto " >
+                        <input  name='myImg' id="pic" type="file" accept = 'image/*' class =' hidden ' >
+                        <label for='pic'class ='border-dashed border-2 border-black mx-10 place-items-center grid cursor-pointer '>
+                            <i class="material-icons  flex justify-center w-full text-black">add_photo_alternate</i>
+                            <P class="text-black non-italic font-normal text-cnter">Upload Image</P>
+                        </label>
+                        
+                        <input type="number" name="price" placeholder="Price" class="mx-auto block rounded-2xl p-2 text-black">
+                        <input type="number" name="quantity" placeholder="Quantity" class="mx-auto block rounded-2xl p-2 text-black">
+                        <input type="submit" class="w-full bg-purple-600 h-11 rounded-3xl" value="sub">
+                    </form>
+                </div>
+                
             </div>
             <!--Add Product-->
             
             <!--Update Product-->
-            <div class=" mt-20">
-                <form class=" space-y-8 bg-text items-center border-2 border-header rounded-3xl w-72 h-96 p-10 m-auto " >
-                    <input type="file" id='pic' accept = 'image/*'class="hidden">
-                    <label for='pic'class ='border-dashed border-2 border-black m-10 place-items-center grid cursor-pointer '>
-                        <i class="material-icons  flex justify-center w-full text-black">add_photo_alternate</i>
-                        <P class="text-black non-italic font-normal text-cnter">Upload Image</P>
-                    </label>
-                    
-                    <input type="number" placeholder="Price" class="mx-auto block rounded-2xl p-2">
-                    <input type="number"placeholder="Quantity" class="mx-auto block rounded-2xl p-2">
-                    <button class="w-full bg-purple-600 h-11 rounded-3xl" onclick="insertingProduct()">Submit</button>
-                </form>
-            </div>
             <!--Update Product-->
             
         </div>

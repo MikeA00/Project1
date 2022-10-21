@@ -53,55 +53,23 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper cursor-pointer ">
                 <!-- Slides -->
-                    <div class="swiper-slide place-items-center grid  ">
-                        <div class='bg-white rounded-2xl'style="width: 280px;">   
-                            <div class=" mb-3" style=" height:300px;   background-image:url('./Images/download.jfif'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                            <div class="flex p-2">
-                                <div>
-                                    <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                    <p class="text-black "> Quantity: <span>7</span></p>
+                <% if(data){ %>
+                    <% data.forEach((data) =>{ %>
+                        <div class="swiper-slide place-items-center grid">
+                            <a href="product/<%=data._id %>">
+                                <div class='bg-white rounded-2xl'style="width: 280px;">
+                                    <div class=" mb-3" style=" height:300px;   background-image:url('uploads/<%=data.filename %>'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                                    <div class="flex p-2">
+                                        <div>
+                                            <h1 class=" bg-white text-black">Price: <%=data.price%></h1>
+                                            <p class="text-black "> Quantity: <%=data.quantity%></p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide place-items-center grid  ">
-                        <div class='bg-white rounded-2xl'style="width: 280px;">   
-                            <div class=" mb-3" style=" height:300px;   background-image:url('./Images/IMG_20200902_134550_450.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                            <div class="flex p-2">
-                                <div>
-                                    <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                    <p class="text-black "> Quantity: <span>7</span></p>
-                                </div>
-                                <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide place-items-center grid  ">
-                        <div class='bg-white rounded-2xl'style="width: 280px;">   
-                            <div class=" mb-3" style=" height:300px;   background-image:url('./Images/Simple-Crop-Habesha-Kemis1.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                            <div class="flex p-2">
-                                <div>
-                                    <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                    <p class="text-black "> Quantity: <span>7</span></p>
-                                </div>
-                                <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide place-items-center grid ">
-                        <div class='bg-white rounded-2xl'style="width: 280px;">   
-                            <div class=" mb-3" style=" height:300px;   background-image:url('./Images/Selam-tesfaye-Ethiopian-Celebrities-Best-Dressed-Habesha-Kemis-for-2022.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                            <div class="flex p-2">
-                                <div>
-                                    <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                    <p class="text-black "> Quantity: <span>7</span></p>
-                                </div>
-                                <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                            </div>
-                        </div>
-                    </div>
-                    
+                            </a>
+                        </div>   
+                    <% })%>    
+                <% } %>
                 <!-- Slides -->
                 </div>
                 <div class="swiper-pagination mt-8"></div>
@@ -117,55 +85,23 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper cursor-pointer ">
                     <!-- Slides -->
-                        <div class="swiper-slide place-items-center grid  ">
-                            <div class='bg-white rounded-2xl'style="width: 280px;">   
-                                <div class=" mb-3" style=" height:300px;   background-image:url('./Images/download.jfif'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                                <div class="flex p-2">
-                                    <div>
-                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                        <p class="text-black "> Quantity: <span>7</span></p>
+                    <% if(data){ %>
+                        <% data.forEach((data) =>{ %>
+                            <div class="swiper-slide place-items-center grid">
+                                <a href="product/<%=data._id %>">
+                                    <div class='bg-white rounded-2xl'style="width: 280px;">
+                                        <div class=" mb-3" style=" height:300px;   background-image:url('uploads/<%=data.filename %>'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                                        <div class="flex p-2">
+                                            <div>
+                                                <h1 class=" bg-white text-black">Price: <%=data.price%></h1>
+                                                <p class="text-black "> Quantity: <%=data.quantity%></p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide place-items-center grid  ">
-                            <div class='bg-white rounded-2xl'style="width: 280px;">   
-                                <div class=" mb-3" style=" height:300px;   background-image:url('./Images/IMG_20200902_134550_450.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                                <div class="flex p-2">
-                                    <div>
-                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                        <p class="text-black "> Quantity: <span>7</span></p>
-                                    </div>
-                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide place-items-center grid  ">
-                            <div class='bg-white rounded-2xl'style="width: 280px;">   
-                                <div class=" mb-3" style=" height:300px;   background-image:url('./Images/Simple-Crop-Habesha-Kemis1.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                                <div class="flex p-2">
-                                    <div>
-                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                        <p class="text-black "> Quantity: <span>7</span></p>
-                                    </div>
-                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide place-items-center grid ">
-                            <div class='bg-white rounded-2xl'style="width: 280px;">   
-                                <div class=" mb-3" style=" height:300px; background-image:url('./Images/Selam-tesfaye-Ethiopian-Celebrities-Best-Dressed-Habesha-Kemis-for-2022.jpg'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
-                                <div class="flex p-2">
-                                    <div>
-                                        <h1 class=" bg-white text-black">Price: <span >5000</span></h1>
-                                        <p class="text-black "> Quantity: <span>7</span></p>
-                                    </div>
-                                    <button class="bg-button text-white py-4 px-5 my-5 mx-10 rounded-3xl">Order</button>
-                                </div>
-                            </div>
-                        </div>
-                        
+                                </a>
+                            </div>   
+                        <% })%>    
+                    <% } %>
                     <!-- Slides -->
                     </div>
                 <div class="swiper-pagination"></div>

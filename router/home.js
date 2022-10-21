@@ -7,7 +7,6 @@ router.get('/',async (req,res)=>{
     console.log(product)
     product.find({}).then((data)=>{
         res.render('home',{data:data})
-        console.log(data)
     }).catch((err)=>{
         console.log(err)
     })

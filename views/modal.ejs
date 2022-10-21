@@ -4,38 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Gabi Online Shopping-Home Page</title>
+    
 </head>
-<body>
-    <div  class="fixed p-4 top-0 left-0 w-full h-full bg-background bg-opacity-40 overflow-auto place-items-center grid text-text">
-        <div class="py-2 rounded-2xl mx-8 p-0 w-4/5 bg-background" >
-            
-            <div class="flex items-center justify-between space-x-10 mx-8 my-0">
-                <img class="h-16 " src="Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
-                <h1 class="text-center text-header text-4xl block ">Gabi Collections</h1>
-                <span class="text-header text-4xl">&times</span>
-            </div>  
-            
-            <div class="  space-x-6 m-4 md:flex block">
-                <img class='border-header border-2 rounded-xl mx-auto md:mx-8 h-96 'src="Images/Selam-tesfaye-Ethiopian-Celebrities-Best-Dressed-Habesha-Kemis-for-2022.jpg">
-                <div class="bg-text text-black mr-8 border-header rounded-3xl p-4 border-2 space-y-4 w-3/5">
-                    <p>Price : <span>3000</span></p>
-                    <p>Quantity : <span>7</span></p>
-                    <div class="bg-text bg-white border border-black rounded-2xl p-2">
-                        <p class="text-black">How would you like to pay?</p>
-                        <div class="flex space-x-6 cursor-pointer ">
-                            <img class="h-20 opacity-40 hover:opacity-100" src='Images/TeleBirr-Logo.svg'>
-                            <img class="h-20 opacity-40 hover:opacity-100" src="Images/images.png">
-                            <img class="h-20 opacity-40 hover:opacity-100" src='Images/Paypal_2014_logo.png'>
-                        </div>
+<body class="bg-background">
+    <header id="#start" class="relative mx-auto my-0 p-2 ">
+        <div class="flex items-center justify-between mt-0">
+            <div class="pt-2 ">
+                <img class="h-16" src="/Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+                
+            </div>
+            <nav class="md:flex hidden space-x-6 mr-20  font-semibold justify-end">
+                <a href="" class="text-white w-28 text-center rounded-2xl border-header border-2 order-solid h-8 align-center hover:bg-text hover:text-background">Home</a>
+                <a href="Product" class="text-white w-28 text-center rounded-2xl border-header border-2 borde br-solid h-8 align-center hover:bg-text hover:text-background">Product</a>
+                <a href="Delivery" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">Delivery</a>
+                <a href="About_Us" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">About us</a>
+            </nav>
+
+            <button id="menu-btn" class=" block hamburger md:hidden focus:outline-none">
+                <span class="ham-top"></span>
+                <span class="ham-middle"></span>
+                <span class="ham-bottom"></span>
+            </button>
+        </div>
+        <div class="md:hidden">
+            <div id="menu" class=" bg-hover absolute flex-col  items-center self-end hidden py-8 mt-10 space-y-6 font-semibold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">Home</a>
+                <a href="Product" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background ">Product</a>
+                <a href="Delivery" class="text-white w-28 text-center rounded-2xl  border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">Delivery</a>
+                <a href="About_Us" class="text-white w-28 text-center rounded-2xl border-header border-2 border-solid h-8 align-center hover:bg-text hover:text-background">About us</a>
+            </div>
+        </div>
+    </header>
+    <div class="flex h-screen my-4">
+        <% if(data){ %>
+        
+            <div class=" mx-auto my-0">
+                <div class='bg-white rounded-2xl'style="width: 350px;">
+                    <div style="height:400px; background-image:url('/uploads/<%=data.filename %>'); background-size:cover; border-radius: 15px 15px 0 0;" ></div>
+                    <div class=" p-4">
+                        <h1 class=" bg-white text-black">Price: <%=data.price%></h1>
+                        <p class="text-black "> Quantity: <%=data.quantity%></p>
                     </div>
                 </div>
+            </div>   
+          
+        <% } %>
+        <form method="POST" action="/product" class="space-y-8 mx-auto border-4 bg-purple-800 border-purple-800 h-4/5 w-2/5 rounded-3xl p-10">
+            <input value="<%= data._id  %>" name="id" class="w-full" required>
+            <input placeholder="Name" class="w-full rounded-2xl h-10 p-4 text-black" name="fullName" required>
+            <input type="tel"placeholder="Phone number" class="w-full rounded-2xl h-10 p-4" name="phone" maxlength="10"  oninput="this.value = this.value.replace(/[^0-9+()]/g, '');"  required> 
+            <input type="email" name="email" placeholder="Email Address" class="w-full rounded-2xl h-10 p-4">
+            <input type="number" name="quantity" placeholder="Quantity" class="w-full rounded-2xl h-10 p-4">
+            <div class="grid place-items-center">
+                <input type="submit" value="Order"class="w-2/5 rounded-2xl align-center text-center bg-orange-500 h-10 cursor-pointer">
             </div>
+        </form>
     
-        </div> 
-    </div>
-    
+    </div>       
+    <footer class= "my-2 border-t border-header md:block grid place-items-center">
+        <div class="text-text block md:flex md:justify-between md:mx-20">
+            <div class="md:hidden flex grid  place-items-center ">
+                <div class="">
+                    <h1 class="text-center text-header text-4xl block ">Gabi Collections</h1>
+                    <img class="h-16 mx-auto my-2 " src="/Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+                </div>  
+            </div>
+            <div class="text-center  space-y-6 my-4">
+                <div class="flex space-x-6">
+                    <span class="material-icons">email</span>
+                    <a class="text-sm cursor-pointer text-header underline">chopyla@gmail.com</a>
+                </div>
+                <div class="flex space-x-6">
+                    <span class="material-icons">phone</span>
+                    <a class="text-sm cursor-pointer text-header underline">+25199116887</a>
+                </div>
+                <div class="flex space-x-6">
+                    <span class="material-icons">place</span>
+                    <a class="text-sm cursor-pointer text-header underline">Addis Ababa, Ethiopia</a>
+                </div>
+            </div>
+            <div class="hidden md:flex grid  place-items-center ">
+                <div class="">
+                    <h1 class="text-center text-header text-4xl block ">Gabi Collections</h1>
+                    <img class="h-16 mx-auto my-2 " src="/Images/3cbfbe148597341fa56f2f87ade90956.png" alt="Logo">
+                </div>  
+            </div>
+            
+            <div class="my-4">
+                <h1 class="text-xl text-center">Contact Us</h1>
+                <div class="md:block flex justify-between ">
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-facebook text-sky-600 md:mr-8 mx-auto"></a>
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-twitter text-sky-600"></a>
+                    <br class="md:block flex ">
+                    <br class="md:block flex ">
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-instagram text-orange-600 md:mr-6 mx-auto"></a>
+                    <a href="#" class="fa text-3xl h-12 p-2 bg-white rounded-full fa-telegram text-sky-600"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./JS/tailwiind.js"></script>
+    <script src="/js/tailwiind.js"></script>
 </body>
 </html>

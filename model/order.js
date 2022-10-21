@@ -1,28 +1,29 @@
 const mongoose= require('mongoose')
-const OroductSchema = new mongoose.Schema({
-    Id :{
+const OrderSchema = new mongoose.Schema({
+    id :{
         type: String,
         required:true
     },
-    Date:{
+    date:{
         type:Date,
         default:Date.now(),
     },
-    Quanttiy:{
+    quanttiy:{
         type:Number,
         required:true
     },
-    Name:{
+    name:{
         type:String,
         required:true
     },
-    Phone:{
+    phone:{
         type:Number,
         required:true
     },
-    Address:{
+    address:{
         type:String,
         required:true
     }
 })
-module.export=mongoose.model('order',OrderSchema)
+const exp=mongoose.model('order',OrderSchema)
+module.exports =exp
